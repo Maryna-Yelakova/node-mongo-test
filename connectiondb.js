@@ -1,5 +1,5 @@
 var mongoose   = require('mongoose');
 var dbConnectionString = process.env.MB_MONGO_CONN;
-mongoose.connect(dbConnectionString);
-var User = require('./app/models/user');
+var db = mongoose.connect(dbConnectionString);
+var User = require('./models/user');
 module.exports = db;

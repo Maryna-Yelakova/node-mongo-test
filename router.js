@@ -1,4 +1,6 @@
+var express    = require('express');
 var router = express.Router();
+
 // var db = require('./connectiondb');
 
 router.use(function(req, res, next) {
@@ -22,10 +24,10 @@ router.route('/users')
     })
 
     .get(function(req, res) {
-        User.find(function(err, bears) {
+        User.find(function(err, users) {
             if (err)
                 res.send(err);
-            res.json(bears);
+            res.json(users);
         });
     });
 
